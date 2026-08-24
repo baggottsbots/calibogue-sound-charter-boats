@@ -1,0 +1,248 @@
+:root {
+      --bg: #050607;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.62);
+      --line: rgba(255, 255, 255, 0.14);
+      --accent: #36d6b5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      overscroll-behavior: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 88px;
+      padding: 0 clamp(22px, 5vw, 72px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .counter {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .counter-line {
+      width: 38px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      visibility: hidden;
+      overflow: hidden;
+    }
+
+    .scene-shell,
+    .scene-inner {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .scene-background {
+      position: absolute;
+      inset: -3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      will-change: transform;
+    }
+
+    .scene-background::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.52) 0%,
+          rgba(0, 0, 0, 0.18) 42%,
+          rgba(0, 0, 0, 0.42) 100%
+        );
+    }
+
+    .scene-background::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(0, 0, 0, 0.02) 0%,
+          rgba(0, 0, 0, 0.12) 48%,
+          rgba(0, 0, 0, 0.62) 100%
+        );
+    }
+
+    .scene-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, 90vw);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      font-size: clamp(11px, 1vw, 14px);
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .scene-title {
+      margin: 0 auto;
+      width: min(1100px, 92vw);
+      font-size: clamp(46px, 7.3vw, 116px);
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+      text-wrap: balance;
+    }
+
+    .scene-title .accent {
+      color: var(--accent);
+    }
+
+    .scene-subtitle {
+      width: min(680px, 86vw);
+      margin: 28px auto 0;
+      font-size: clamp(15px, 1.5vw, 20px);
+      line-height: 1.55;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.68);
+      text-transform: none;
+    }
+
+    .scroll-hint {
+      position: fixed;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .scroll-mark {
+      width: 1px;
+      height: 30px;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.05)
+        );
+    }
+
+    .scene-1 .scene-background {
+      background-image:
+        url("https://paymegpt.com/objects/generated-images/2/1787538423238-9ff44697062d86f4.png");
+    }
+
+    .scene-2 .scene-background {
+      background-image:
+        url("https://paymegpt.com/objects/generated-images/2/1787538435506-4fc0089eb6c856be.png");
+    }
+
+    .scene-3 .scene-background {
+      background-image:
+        url("https://paymegpt.com/objects/generated-images/2/1787538447933-4248625a10197447.png");
+    }
+
+    .scene-4 .scene-background {
+      background-image:
+        url("https://paymegpt.com/objects/generated-images/2/1787538461935-7448f2fa7bf7de26.png");
+    }
+
+    .scene-5 .scene-background {
+      background-image:
+        url("https://paymegpt.com/objects/generated-images/2/1787538473831-0dfe146cc608aa2e.png");
+    }
+
+    .clip-line {
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        height: 72px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .brand {
+        font-size: 11px;
+      }
+
+      .counter {
+        font-size: 10px;
+      }
+
+      .scene-title {
+        font-size: clamp(42px, 13vw, 74px);
+        line-height: 0.96;
+      }
+
+      .scene-subtitle {
+        margin-top: 20px;
+      }
+
+      .scroll-hint {
+        bottom: 18px;
+      }
+    }
