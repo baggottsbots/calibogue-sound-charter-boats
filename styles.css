@@ -140,7 +140,7 @@
       margin: 0 auto;
       width: min(1100px, 92vw);
       font-size: clamp(46px, 7.3vw, 116px);
-      line-height: 0.94;
+      line-height: 1;
       letter-spacing: -0.055em;
       font-weight: 700;
       text-wrap: balance;
@@ -214,8 +214,17 @@
         url("https://paymegpt.com/objects/generated-images/2/1787538473831-0dfe146cc608aa2e.png");
     }
 
+    /*
+      SplitText wraps each visual line with this class.
+      The extra vertical padding gives letters with descenders
+      like g, y, p, q and j room to render without clipping.
+    */
     .clip-line {
       overflow: hidden;
+      padding-top: 0.06em;
+      padding-bottom: 0.16em;
+      margin-top: -0.06em;
+      margin-bottom: -0.16em;
     }
 
     @media (max-width: 768px) {
@@ -235,7 +244,7 @@
 
       .scene-title {
         font-size: clamp(42px, 13vw, 74px);
-        line-height: 0.96;
+        line-height: 1;
       }
 
       .scene-subtitle {
@@ -244,5 +253,12 @@
 
       .scroll-hint {
         bottom: 18px;
+      }
+
+      .clip-line {
+        padding-top: 0.07em;
+        padding-bottom: 0.18em;
+        margin-top: -0.07em;
+        margin-bottom: -0.18em;
       }
     }
